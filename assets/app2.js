@@ -4,7 +4,7 @@ function displayCharacterInfo() {
     $("#giphy-view").empty();
     var character = $(this).attr("data-name");
     console.log(character);
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + character + "&api_key=H5mLonS9aCPATr6KMH8vYFrJdyLODGwy&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + "&api_key=H5mLonS9aCPATr6KMH8vYFrJdyLODGwy&limit=10";
     $.ajax({
             url: queryURL,
             method: "GET"
@@ -38,7 +38,7 @@ function renderButtons() {
     }
 }
 
-$("add-giphy").on("click", function (event) {
+$("#add-giphy").on("click", function (event) {
     event.preventDefault();
     var character = $("#character-input").val().trim();
     buttons.push(character);
